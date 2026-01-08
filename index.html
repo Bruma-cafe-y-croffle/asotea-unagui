@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNAGUI SUSHI うなぎ - Menú Digital</title>
+<title>Azotea By unagui sushi - Menú Digital</title>
 <!-- Carga de Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <!-- Configuración personalizada de Tailwind -->
@@ -71,10 +71,10 @@ to { opacity: 1; transform: scale(1); }
 <!-- CABECERA -->
 <header class="text-center py-6 mb-6 border-b-2 border-unagui-orange/50 relative">
 <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-UNAGUI
+Azotea
 </h1>
 <p class="text-2xl sm:text-4xl font-['Noto_Serif_JP'] text-unagui-orange mt-1">
-SUSHI うなぎ
+By unagui sushi
 </p>
 <!-- Botón de Menú Hamburguesa (Tres Rallitas) -->
 <button id="nav-menu-btn"
@@ -101,7 +101,7 @@ onclick="toggleNavModal(true)"
 </main>
 <!-- FOOTER CON DERECHOS RESERVADOS -->
 <footer class="mt-12 py-4 text-center border-t border-unagui-orange/30">
-<p class="text-sm text-gray-500">UNAGUI, todos los derechos reservados.</p>
+<p class="text-sm text-gray-500">Azotea By unagui sushi, todos los derechos reservados.</p>
 </footer>
 </div>
 <!-- MODAL DE IMAGEN DE PLATO -->
@@ -154,11 +154,13 @@ onclick="toggleNavModal(true)"
 </div>
 </div>
 <!-- MODAL DE PROMOCIÓN (VENTANA EMERGENTE SOLO EN ALUNA PLAZA) -->
-<div id="promo-modal" class="fixed inset-0 z-40 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onclick="closePromoModal()">
+<!-- CAMBIO: inset-0 por inset-4 para no tapar toda la pantalla -->
+<div id="promo-modal" class="fixed inset-4 z-40 hidden items-center justify-center p-0 bg-black/60 backdrop-blur-sm" onclick="closePromoModal()">
 <div id="promo-card" class="w-full max-w-sm bg-unagui-charcoal rounded-xl shadow-2xl border-2 border-unagui-orange/80 overflow-hidden promo-modal-enter" onclick="event.stopPropagation()">
 <!-- Imagen del Producto Promocional (versión compacta) -->
 <div class="relative h-32 bg-gray-800 rounded-t-xl overflow-hidden">
-<img id="promo-img" src="" alt="Promoción Destacada" class="w-full h-full object-cover">
+<!-- CAMBIO: Añadido max-w-full para controlar la imagen -->
+<img id="promo-img" src="" alt="Promoción Destacada" class="w-full h-full object-cover max-w-full">
 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 </div>
 <div class="p-5">
@@ -182,16 +184,16 @@ Ver Detalles
 // --- DATOS DE PROMOCIÓN (EDITAR AQUÍ) ---
 const promotionData = {
 title: "EMI ROLL",
-description: "¡Prueva nuestro plato nuevo! Un delicado balance de palmito trufado, langostino en tempura y queso crema, envuelto en un fino papel de soya que abraza cada sabor como una obra de arte. Déjate sorprender por su suavidad y su magia.",
+description: "¡Prueba nuestro plato nuevo! Un delicado balance de palmito trufado, langostino en tempura y queso crema, envuelto en un fino papel de soya que abraza cada sabor como una obra de arte. Déjate sorprender por su suavidad y su magia.",
 price: " $ 55.000",
 image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Emi%20roll.jpg?raw=true"
 };
 // --- FIN DATOS DE PROMOCIÓN ---
 // --- DETALLES DE SEDES (NO CAMBIAR) ---
 const sedeDetails = {
-"Sede Aluna Plaza": {
+"Azotea By unagui sushi": {
 whatsapp: "573107137496",
-direccion: "Aluna Plaza, Santa Marta",
+direccion: "Santa Marta",
 displayNumber: "+57 310 713 7496",
 instagram: "https://www.instagram.com/unaguisushi_/"
 }
@@ -213,8 +215,8 @@ const menuDataAlunaPlaza = {
 { name: "DIPSALMON", description: "Langostino tempura, cangrejo, queso, topping salmón.", price: 60, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Dipsalmon%20Roll.JPG?raw=true" },
 { name: "OVALLE ROLL", description: "langostinos empanizados, queso crema, aguacate y topping de tartar de atún.", price: 48, icon: "disc", image: null },
 { name: "NIGUI ROLL", description: "Salmón natural, arroz, crunch y ensalada cangrejo.", price: 48, icon: "disc", image: null },
-{ name: "VOLCANO", description: "salmón y langostino empanizado con queso crema, cubiertos con topping de cangrejo, wakame, masago, cebollín y spicy.", price: 55, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Volcano%20roll%20(1).jpg?raw=true" },
-{ name: "TATAKI ROLL", description: "Salmón, queso crema, aguacate, topping tataki atún y mousse de aguacate..", price: 48, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Tataki%20Roll.JPG?raw=true"},
+{ name: "VOLCANO", description: "salmón y langostino empanizado con queso crema, cubiertos con topping de cangrejo, wakame, masago, cebollín y spicy.", price: 55, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Volcano%20roll%20  (1).jpg?raw=true" },
+{ name: "TATAKI ROLL", description: "Salmón, queso crema, aguacate, topping tataki atún y mousse de aguacate..", price: 48, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Tataki%20Roll.JPG?raw=true" },
 { name: "UNAGUI ROLL", description: "anguila y langostinos empanizados con queso crema y cebollín, coronados con topping de cangrejo.", price: 50, icon: "disc", image: null },
 { name: "LATIN ROLL", description: "langostino empanizado, aguacate y queso crema, rematado con topping de plátano maduro.", price: 45, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Latin%20roll.jpg?raw=true" },
 { name: "EXPLOSIÓN", description: "langostino tempura, cangrejo y queso crema con pepino, coronado con topping de atún, aguacate y masago.", price: 50, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Explosion.jpg?raw=true" },
@@ -223,8 +225,8 @@ const menuDataAlunaPlaza = {
 { name: "CALIFORNIA ROLL (CLÁSICO)", description: "cangrejo, aguacate y pepino, coronado con masago y ajonjolí negro.", price: 30, icon: "sun", image: null },
 ],
 "Rolls Tempura y  Roll Natural": [
-{ name: "TEMPURA CRONCH", description: "anguila, cangrejo empanizado, tilapia, salmón, cebollín, queso crema, masago y topping de cangrejo.", price: 55, icon: "flame", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Tempura%20crunch%20(1).jpg?raw=true" },
-{ name: "SKIN TEMPURA", description: "langostinos empanizados con queso crema, piel de salmón crocante, aguacate, wakame y masago.", price: 45, icon: "flame", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Skin%20tempura%20(1).jpg?raw=true" },
+{ name: "TEMPURA CRONCH", description: "anguila, cangrejo empanizado, tilapia, salmón, cebollín, queso crema, masago y topping de cangrejo.", price: 55, icon: "flame", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Tempura%20crunch%20  (1).jpg?raw=true" },
+{ name: "SKIN TEMPURA", description: "langostinos empanizados con queso crema, piel de salmón crocante, aguacate, wakame y masago.", price: 45, icon: "flame", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Skin%20tempura%20  (1).jpg?raw=true" },
 { name: "TIGGER ESPECIAL", description: "salmón, queso crema y aguacate, coronado con masago y topping de cangrejo gratinado.", price: 55, icon: "layers", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Tigger%20especial%20roll.jpg?raw=true" },
 { name: "VEGGIE ROLL (VEGANO)", description: "Pepino, espárrago, aguacate, wakame, zanahoria y ajonjolí.", price: 35, icon: "carrot", image: null },
 { name: "KIURI MAKI (NATURAL)", description: "Cama de pepino, salmón, atún, cangrejo, masago, queso crema, aguacate, acompañado de salsa ponzu.", price: 35, icon: "cucumber", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Kiuri%20Maki%20Natural%20Roll.JPG?raw=true" },
@@ -232,22 +234,22 @@ const menuDataAlunaPlaza = {
 { name: "OSAKA FRAIN (NATURAL)", description: "Rollo de salmón sin arroz con atún, tilapia, cangrejo, aguacate, queso crema y masago.", price: 50, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Osaka%20Frain%20Roll.jpg?raw=true" },
 { name: "TUNA SPICE MAKI (NATURAL)", description: "atún, crunch, aguacate, sriracha, cebollín y masago.", price: 40, icon: "disc", image: null },
 { name: "SALMON ESPECIAL (NATURAL)", description: "Salmón, crunch, cebollín, masago y jengibre.", price: 35, icon: "disc", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Nigui%20Roll.JPG?raw=true" },
-{ name: "ALASKA ROLL (CLÁSICO)", description: "Salmón, queso crema, aguacate, ajonjolí.", price: 30, icon: "snowflake", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Alaska%20Roll%20(1).JPG?raw=true" },
+{ name: "ALASKA ROLL (CLÁSICO)", description: "Salmón, queso crema, aguacate, ajonjolí.", price: 30, icon: "snowflake", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Alaska%20Roll%20  (1).JPG?raw=true" },
 ],
 "Fuertes": [
 { name: "ARROZ YAKIMESHI", description: "Arroz frito con pollo, langostino, huevo, vegetales, salsa de soya y ajonjolí coronado con cebollin frito.", price: 40, icon: "rice-bowl", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Arroz%20yakimeshi.jpg?raw=true" },
-{ name: "SALMÓN TERIYAKI", description: "salmón a la plancha con preparación al estilo teriyaki, acompañado de arroz oriental.", price: 50, icon: "fish", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Salm%C3%B3n%20teriyaki%20(1).jpg?raw=true" },
+{ name: "SALMÓN TERIYAKI", description: "salmón a la plancha con preparación al estilo teriyaki, acompañado de arroz oriental.", price: 50, icon: "fish", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Salm%C3%B3n%20teriyaki%20  (1).jpg?raw=true" },
 { name: "PICAÑA ANGUS", description: "300 g de picaña Angus, marcada a la perfección, con papas trufadas.", price: 65, icon: "steak", image: null },
 { name: "YAKISOBA DE LANGOSTINO", description: "noodles salteados con langostinos y vegetales.", price: 40, icon: "steak", image: null },
 { name: "RAMEN AL ESTILO UNAGUI", description: "Fondo de la casa con fideos, cerdo o pollo, huevo, soya, tofu y nori.", price: 40, icon: "bone", image: null },
-{ name: "RAMEN MIXTO UNAGUI", description: "Fondo de la casa con fideos, cerdo o pollo, huevo, soya, tofu y nori.", price: 50, icon: "bone", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Ramen%20(2).jpg?raw=true" },
+{ name: "RAMEN MIXTO UNAGUI", description: "Fondo de la casa con fideos, cerdo o pollo, huevo, soya, tofu y nori.", price: 50, icon: "bone", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Ramen%20  (2).jpg?raw=true" },
 { name: "POKEN DE ATÚN", description: "Atún natural, langostino tempura, cangrejo, edamame, aguacate, pepino y batata.", price: 40, icon: "bone", image: "https://github.com/Bruma-cafe-y-croffle/bruma-asses/blob/main/Poke%20de%20at%C3%BAn.jpg?raw=true" },
 { name: "POKEN DE SALMÓN", description: "Salmón natural, cangrejo, wakame, zanahoria, pepino, edamame y aguacate.", price: 40, icon: "bone", image: null },
 ]
 };
 // --- UNIFICACIÓN DE MENÚS POR SEDE ---
 const allMenuData = {
-"Sede Aluna Plaza": menuDataAlunaPlaza
+"Azotea By unagui sushi": menuDataAlunaPlaza
 };
 // --- LÓGICA (NO SE MODIFICA EL DISEÑO NI LA LÓGICA DEL MODAL) ---
 let activeCategory = null;
@@ -260,7 +262,7 @@ const whatsappLink = document.getElementById('whatsapp-link');
 const locationLink = document.getElementById('location-link');
 if (activeSede && sedeDetails[activeSede]) {
 const details = sedeDetails[activeSede];
-whatsappLink.href = `https://wa.me/${details.whatsapp}?text=Hola%20Unagui%20(${activeSede}),%20quisiera%20hacer%20un%20pedido.`;
+whatsappLink.href = `https://wa.me/${details.whatsapp}?text=Hola%20Azotea%20By%20unagui%20sushi,%20quisiera%20hacer%20un%20pedido.`;
 locationLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(details.direccion)}`;
 }
 }
@@ -394,7 +396,7 @@ lucide.createIcons();
 }
 // Init
 window.onload = () => {
-selectSede('Sede Aluna Plaza');
+selectSede('Azotea By unagui sushi');
 lucide.createIcons();
 };
 </script>
